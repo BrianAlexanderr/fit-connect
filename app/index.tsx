@@ -13,7 +13,7 @@ export default function LaunchPage() {
         duration: 300, // fade duration (1 second)
         useNativeDriver: true,
       }).start(() => {
-        router.replace("../screens/homePage"); // Navigate after fade-out
+        router.replace('../layout/MainLayout'); // Navigate after fade-out
       });
     }, 2000); // Delay before animation starts
 
