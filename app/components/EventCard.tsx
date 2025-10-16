@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
+import PrimaryButton from "./button_blue";
 
 interface EventCardProps {
   image: { uri: string };   // specific shape for React Native ImageSource
@@ -35,38 +36,36 @@ export default function EventCard({ image, title, date, participants }: EventCar
         </Text>
         <Text style={styles.participants}>👥 {participants} participants</Text>
       </View>
-      <TouchableOpacity>
-        <Text style={styles.join}>Join</Text>
-      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
+    flexDirection: "row",
+    alignItems: "flex-start",
     backgroundColor: "#fff",
     borderRadius: 12,
-    padding: 12,
-    flexDirection: "row",
-    alignItems: "center",
-    marginVertical: 8,
+    padding: 10,
     shadowColor: "#000",
-    shadowOpacity: 0.01,
-    shadowRadius: 2,
+    shadowOpacity: 0.05,
+    shadowRadius: 3,
     elevation: 2,
+    marginBottom: 10,
     height: 140
   },
   image: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 100,
     borderRadius: 8,
     marginRight: 12,
+    alignSelf: "center"
   },
   info: {
-    flex: 1,
+    flex: 1
   },
   title: {
-    fontSize: 14,
+    fontSize: 17,
     fontWeight: "600",
   },
   date: {
@@ -76,12 +75,5 @@ const styles = StyleSheet.create({
   participants: {
     fontSize: 12,
     color: "#777",
-  },
-  join: {
-    marginRight: 8,
-    marginBottom: 80,
-    color: "#0057D9",
-    fontWeight: "600",
-    fontSize: 18
   },
 });
