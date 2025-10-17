@@ -1,6 +1,5 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import PrimaryButton from "./button_blue";
 
 interface EventCardProps {
   image: { uri: string };   // specific shape for React Native ImageSource

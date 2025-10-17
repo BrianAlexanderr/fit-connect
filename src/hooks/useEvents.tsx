@@ -31,3 +31,25 @@ export const useUpcomingEvents = () => {
 
   return { events, loading };
 };
+
+export const useAllEvents = () => {
+  const [events, setEvents] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const data = await getAllEvents();
+        setEvents(data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
+  return { events, loading };
+};
