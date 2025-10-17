@@ -30,7 +30,7 @@ export default function HomeScreen() {
             <Text style={styles.sectionTitle}>What to do?</Text>
             <View style={styles.shortcuts}>
               <ShortcutCard icon="users" label="Community" color="primary" onPress={() => router.push("../screens/Community/FindCommunityScreen")}/>
-              <ShortcutCard icon="calendar" label="Events" color="secondary" />
+              <ShortcutCard icon="calendar" label="Events" color="secondary" onPress={() => router.push("../screens/Events/FindEventScreen")}/>
               <ShortcutCard icon="dumbbell" label="Training" color="tertiary" />
             </View>
           </View>
