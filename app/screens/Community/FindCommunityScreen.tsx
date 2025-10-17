@@ -92,7 +92,7 @@ export default function CommunityPage() {
                     key={index}
                     img={{ uri: com.img }}
                     name={com.name}
-                    members={com.totalMembers}
+                    members={com.members}
                     description={com.description}
                     isExclusive={com.isExclusive}
                     price={com.price}
