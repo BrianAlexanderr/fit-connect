@@ -42,26 +42,27 @@ Sebelum memulai, pastikan Anda telah menginstal perangkat lunak berikut:
 ---
 
 ## Susunan Proyek
+```
 fit-connect/ 
-├── app/ # Direktori utama untuk screen, komponen, layout, dan style (menggunakan Expo Router) 
-│ ├── components/ # Komponen UI yang dapat digunakan kembali 
-│ ├── layout/ # Komponen layout utama 
-│ ├── screens/ # Screen/halaman aplikasi
-│ └── styles/ # File tema atau style global 
-├── assets/ # File statis seperti gambar dan font 
-│ └── images/ 
-├── src/ # Kode sumber non-UI (API, hooks, context, utils) 
-│ ├── api/ # Fungsi untuk berinteraksi dengan backend API 
-│ ├── context/ # React Context untuk manajemen state global 
-│ ├── hooks/ # Custom React Hooks 
-│ └── utils/ # Fungsi utilitas (validasi, konversi data, dll.) 
-├── .env # (Perlu dibuat) File untuk menyimpan environment variable (API Keys, dll.) 
-├── app.json # Konfigurasi Expo 
-├── eas.json # Konfigurasi EAS Build 
-├── package.json # Dependensi dan skrip proyek 
-├── tsconfig.json # Konfigurasi TypeScript 
-└── firebaseConfig.js # Konfigurasi Firebase
-
+├── app/ # Direktori utama untuk screen, komponen, layout, dan style (menggunakan Expo Router) <b>
+│ ├── components/ # Komponen UI yang dapat digunakan kembali <b>
+│ ├── layout/ # Komponen layout utama <b>
+│ ├── screens/ # Screen/halaman aplikasi <b>
+│ └── styles/ # File tema atau style global <b>
+├── assets/ # File statis seperti gambar dan font <b>
+│ └── images/ <b>
+├── src/ # Kode sumber non-UI (API, hooks, context, utils) <b>
+│ ├── api/ # Fungsi untuk berinteraksi dengan backend API <b>
+│ ├── context/ # React Context untuk manajemen state global <b>
+│ ├── hooks/ # Custom React Hooks <b>
+│ └── utils/ # Fungsi utilitas (validasi, konversi data, dll.) <b>
+├── .env # (Perlu dibuat) File untuk menyimpan environment variable (API Keys, dll.) <b>
+├── app.json # Konfigurasi Expo <b>
+├── eas.json # Konfigurasi EAS Build <b>
+├── package.json # Dependensi dan skrip proyek<b> 
+├── tsconfig.json # Konfigurasi TypeScript <b>
+└── firebaseConfig.js # Konfigurasi Firebase <b>
+```
 ---
 
 ## Contoh Penggunaan / Memulai
