@@ -8,10 +8,12 @@ import SectionHeader from "../../components/SectionHeader";
 import { useUpcomingEvents } from "../../../src/hooks/useEvents";
 import { useTrainings } from "../../../src/hooks/useTrainings";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useUser } from "@/src/context/userContext";
 
 export default function HomeScreen() {
   const { events } = useUpcomingEvents();
   const { trainings } = useTrainings();
+  const { user } = useUser();
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff'}} edges={['bottom']}>
@@ -22,7 +24,10 @@ export default function HomeScreen() {
           showsVerticalScrollIndicator={false}
         >
           <Text style={styles.greeting}>
-            Hello, <Text style={styles.username}>User</Text>
+            Hello, {""}
+            <Text style={styles.username}>
+              {user?.fullName ? user.fullName.split(" ")[0] : "user"}
+            </Text>
           </Text>
 
           {/* Shortcut Section */}
@@ -31,7 +36,7 @@ export default function HomeScreen() {
             <View style={styles.shortcuts}>
               <ShortcutCard icon="users" label="Community" color="primary" onPress={() => router.push("../screens/Community/FindCommunityScreen")}/>
               <ShortcutCard icon="calendar" label="Events" color="secondary" onPress={() => router.push("../screens/Events/FindEventScreen")}/>
-              <ShortcutCard icon="dumbbell" label="Training" color="tertiary" />
+              <ShortcutCard icon="dumbbell" label="Training" color="tertiary" onPress={() => router.push("../screens/Training/FindTrainingScreen")}/>
             </View>
           </View>
 
@@ -56,6 +61,7 @@ export default function HomeScreen() {
               title={training.title}
               slots={training.slots}
               date={training.date}
+              location={training.location}
             />
           ))}
         </ScrollView>

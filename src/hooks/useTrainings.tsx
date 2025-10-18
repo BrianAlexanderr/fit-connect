@@ -36,3 +36,26 @@ export const useTrainings = () => {
 
   return { trainings, loading };
 };
+
+export const useDisplayAllTrainings = () => {
+  const [trainings, setTrainings] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTrainings = async () => {
+      try {
+        const data = await getAllTrainings();
+        setTrainings(data);
+      } catch (err) {
+        console.error("Error fetching trainings:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTrainings();
+  }, []);
+
+  return { trainings, loading };
+};
+

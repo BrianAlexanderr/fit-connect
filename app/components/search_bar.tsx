@@ -12,7 +12,7 @@ export const SearchBar: React.FC<Props> = ({ value, onChange }) => {
     <View style={styles.searchBox}>
       <Ionicons name="search" size={20} color="#999" />
       <TextInput
-        placeholder="Search community..."
+        placeholder="Search something..."
         style={styles.searchInput}
         value={value}
         onChangeText={onChange}

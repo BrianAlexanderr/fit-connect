@@ -1,12 +1,13 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import PrimaryButton from "./button_blue";
+import { Ionicons } from '@expo/vector-icons';
 
 interface SessionCardProps {
   title: string;
   date: Date;
   slots: number;
   imageUrl: {uri: string};
+  location: string;
   onJoin?: () => void;
 }
 
@@ -15,6 +16,7 @@ const SessionCard: React.FC<SessionCardProps> = ({
   imageUrl,
   date,
   slots,
+  location,
   onJoin,
 }) => {
   return (
@@ -36,6 +38,10 @@ const SessionCard: React.FC<SessionCardProps> = ({
                     year: "numeric",
                 })}
         </Text>
+        <View style={styles.detailRow}>
+            <Ionicons name="location-outline" size={14} color="#666" />
+            <Text style={styles.detailText}>{location}</Text>
+        </View>
         <Text style={styles.slots}>👥 {slots} slots left</Text>
       </View>
 
@@ -76,6 +82,16 @@ const styles = StyleSheet.create({
   date: {
     fontSize: 12,
     color: "#555",
+  },
+  detailRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 4,
+  },
+  detailText: {
+    fontSize: 13,
+    color: '#666',
+    marginLeft: 6,
   },
   slots: {
     fontSize: 12,
