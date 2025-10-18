@@ -13,7 +13,7 @@ export default function LoginScreen() {
   const [password, setPassword] = useState("")
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const { user, setUser } = useUser();
+  const { setUser } = useUser();
 
   const handleSignIn = async () => {
     let isValid = true;
